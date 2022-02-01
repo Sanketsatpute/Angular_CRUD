@@ -1,0 +1,70 @@
+
+  <div class="row" style="margin-top: 3%;">
+    
+        <!-- <input type="hidden" name="#_id" #_id="ngModel" [(ngModel)]="utility.selectedDetail._id"> -->
+      <!-- <div class="row">
+        <div class="input-field col s6">
+          <input name="firstname" #firstname="ngModel" [(ngModel)]="utility.selectedDetail.firstname" placeholder="Enter Your First Name" id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input name="lastname" #lastname="ngModel" [(ngModel)]="utility.selectedDetail.lastname" id="last_name" type="text" placeholder="Enter Your Last Name" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+       
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="email" #email="ngModel" [(ngModel)]="utility.selectedDetail.email" placeholder="Enter Your Email-id" id="email" type="email" class="validate">
+          <label for="email">Email-Id</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="mobile" #mobile="ngModel" [(ngModel)]="utility.selectedDetail.mobile" placeholder="Enter Your Phone Number" id="phonenumber" type="number" class="validate">
+          <label for="phonenumber">Mobile Number</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="salary" #salary="ngModel" [(ngModel)]="utility.selectedDetail.salary" placeholder="Enter Salary" id="salary" type="number" class="validate">
+          <label for="salary">Salary</label>
+        </div>
+      </div> -->
+      <form (ngSubmit)="submit(fname , lname ,email ,mobile,salary)" style="width: 55%;margin: auto;">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">First Name</label>
+            <input #fname  placeholder="Enter Your First Name"  type="text" class="form-control" >
+            
+          </div>
+        
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Last Name</label>
+          <input placeholder="Enter Your Last Name" #lname  type="text" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email-Id</label>
+            <input #email  placeholder="Enter YourEmail-Id"  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Mobile Number</label>
+            <input placeholder="Enter Your Mobile Number" #mobile  type="text" class="form-control" >
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Salary</label>
+            <input placeholder="Enter Salary" #salary  type="number" class="form-control" >
+          </div>
+       
+        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+        
+      </form>
+
+
+
+   
+  </div>
+
+        

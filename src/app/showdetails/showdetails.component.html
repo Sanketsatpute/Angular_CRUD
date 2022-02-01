@@ -1,0 +1,80 @@
+<table class="table table-hover" style="margin-top: 2%;">
+    <thead>
+      <tr>
+       
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email-id</th>
+        <th scope="col">Mobile Number</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ans of data">
+        <th scope="row">{{ans.firstname}}</th>
+        <td>{{ans.lastname}}</td>
+        <td>{{ans.email}}</td>
+        <td>{{ans.mobile}}</td>
+        <td>{{ans.salary}}</td>
+        <td>
+            
+            <a class="action-btn">
+                <i style="cursor: pointer;"  type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="edit(ans,ans._id)" class="material-icons">edit</i>
+            </a>
+            <a class="action-btn">
+                <i class="material-icons" (click)="remove(ans,ans._id)" style="color: red;cursor: pointer;">delete</i>
+            </a>
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+
+
+ <!-- Button trigger modal -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" [formGroup]="myform">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">First Name</label>
+                <input #fname formControlName="firstname"  placeholder="Enter Your First Name"  type="text" class="form-control" >
+                
+              </div>
+            
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Last Name</label>
+              <input formControlName="lastname" placeholder="Enter Your Last Name" #lname  type="text" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email-Id</label>
+                <input formControlName="email" #email  placeholder="Enter YourEmail-Id"  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Mobile Number</label>
+                <input formControlName="mobile" placeholder="Enter Your Mobile Number" #mobile  type="text" class="form-control" >
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Salary</label>
+                <input formControlName="salary" placeholder="Enter Salary" #salary  type="number" class="form-control" >
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="saveedit()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
